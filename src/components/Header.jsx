@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <>
       <div
-        className="flex flex-wrap items-center justify-between py-2.5 px-3 mb-3 false undefined"
-        style={{ backgroundColor: "#3F3F3F" }}
+        className="flex flex-wrap items-center justify-between py-2.5 px-3 false undefined"
+        style={{ backgroundColor: "rgb(46 45 45)" }}
       >
         <NavbarContainer>
           <NavbarWrapper>
@@ -37,21 +37,21 @@ const Header = () => {
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#about-me" ripple="light">
+                <NavLink href="#about-me" style={{ color: "#F7F7F7" }}>
                   Sobre mí
                 </NavLink>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#credentials" ripple="light">
+                <NavLink href="#credentials" style={{ color: "#F7F7F7" }}>
                   Credenciales
                 </NavLink>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#contact" ripple="light">
+                <NavLink href="#contact" style={{ color: "#F7F7F7" }}>
                   Contáctame
                 </NavLink>
               </motion.div>

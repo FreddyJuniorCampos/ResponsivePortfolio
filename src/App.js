@@ -1,10 +1,10 @@
 import "@material-tailwind/react/tailwind.css";
-import Header from "./components/Header";
+import Home from "./views/Home";
 
 const App = () => {
   return (
     <div>
-      <Header />
+      <Home />
     </div>
   );
 };
