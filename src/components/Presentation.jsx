@@ -4,7 +4,6 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 import Avatar from "../assets/static/avatar1.png";
-
 import useQuery from "../hooks/useQuery";
 
 const Presentation = () => {
@@ -13,45 +12,46 @@ const Presentation = () => {
   return (
     <>
       <div
-        className="md:container md:mx-auto h-screen"
+        className="md:container md:mx-auto flex flex-col h-screen"
         style={{ background: "linear-gradient(#3F3F3F, #D8D8D8)" }}
       >
-        <div
-          className={
-            size === "sm" || size === "md"
-              ? "flex flex-col items-center h-screen"
-              : "flex flex-wrap justify-center items-center h-screen bg-blue-200"
-          }
-        >
-          <img className="my-8" src={Avatar} alt="Avatar" width="200px" />
-          <div className="sm:container sm:mx-auto my-4 mx-5 text-white">
-            <p>Hola, Mi nombre es</p>
-            <h1 className="text-3xl text-white">Freddy Junior Campos</h1>
-          </div>
-          <div
-            className="mb-4"
-            style={
-              size === "sm"
-                ? { maxWidth: "300px", textAlign: "justify" }
-                : { maxWidth: "550px" }
-            }
-          >
-            <p className="text-white">
-              Soy desarrollador web e ingeniero electrónico, siempre motivado
-              para aprender nuevas tecnologías. Soy un apasionado por la
-              programación y me encanta la libreria React.
-            </p>
-          </div>
-          <div className="mt-4">
-            <motion.div
-              animate={{ y: 10 }}
-              transition={{ repeat: Infinity, duration: 1 }}
+        <div className={responsiveContainer(size)}>
+          <img
+            className={size === "sm" && "mt-8"}
+            src={Avatar}
+            alt="Avatar"
+            width={size === "sm" ? "250px" : "350px"}
+          />
+          <div className="my-4 mx-5 text-white">
+            <div className="my-4">
+              <p>Hola, Mi nombre es</p>
+              <h1 className="text-3xl text-white">Freddy Junior Campos</h1>
+            </div>
+            <div
+              className="mb-4"
+              style={
+                size === "sm"
+                  ? { maxWidth: "300px", textAlign: "justify" }
+                  : { maxWidth: "550px" }
+              }
             >
-              <a href="#about-me">
-                <FontAwesomeIcon icon={faAngleDown} size="3x" color="#FFCC57" />
-              </a>
-            </motion.div>
+              <p className="text-white">
+                Soy desarrollador web e ingeniero electrónico, siempre motivado
+                para aprender nuevas tecnologías. Soy un apasionado por la
+                programación y me encanta la libreria React.
+              </p>
+            </div>
           </div>
+        </div>
+        <div className="flex justify-center pb-4 mb-8">
+          <motion.div
+            animate={{ y: 10 }}
+            transition={{ repeat: Infinity, duration: 1 }}
+          >
+            <a href="#about-me">
+              <FontAwesomeIcon icon={faAngleDown} size="3x" color="#FFCC57" />
+            </a>
+          </motion.div>
         </div>
       </div>
     </>
@@ -59,3 +59,16 @@ const Presentation = () => {
 };
 
 export default Presentation;
+
+const responsiveContainer = (size) => {
+  if (size === "sm") return "flex flex-col justify-center items-center";
+  if (size === "md")
+    return "flex flex-col justify-center items-center h-screen";
+  else return "flex items-center justify-center h-screen";
+};
+
+const responsiveImage = (size) => {
+  if (size === "sm") return "my-8";
+  if (size === "md") return "mb-16";
+  else return "mb-16";
+};
