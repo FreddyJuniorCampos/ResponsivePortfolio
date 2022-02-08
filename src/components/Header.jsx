@@ -23,7 +23,7 @@ const Header = () => {
         <NavbarContainer>
           <NavbarWrapper>
             <motion.div whileHover={{ scale: 1.05 }}>
-              <img src={logo} alt="logo" style={{ width: "40px" }} />
+              <img src={logo} alt="logo" style={{ width: "40px", cursor: "pointer" }} />
             </motion.div>
             <NavbarToggler
               color="white"
