@@ -12,7 +12,7 @@ const Presentation = () => {
   return (
     <>
       <div
-        className="md:container md:mx-auto flex flex-col h-screen"
+        className="flex flex-col h-screen"
         style={{ background: "linear-gradient(#3F3F3F, #D8D8D8)" }}
       >
         <div className={responsiveContainer(size)}>

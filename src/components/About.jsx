@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <div
-        className="flex justify-center"
+        className="flex justify-center py-16"
         style={{ background: "linear-gradient( #D8D8D8, #3F3F3F)" }}
       >
         <div
