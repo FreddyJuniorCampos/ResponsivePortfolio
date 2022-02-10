@@ -17,7 +17,7 @@ const Presentation = () => {
       >
         <div className={responsiveContainer(size)}>
           <img
-            className={size === "sm" && "mt-8"}
+            className={size === "sm" ? "mt-8" : ""}
             src={Avatar}
             alt="Avatar"
             width={size === "sm" ? "250px" : "350px"}
@@ -67,8 +67,4 @@ const responsiveContainer = (size) => {
   else return "flex items-center justify-center h-screen";
 };
 
-const responsiveImage = (size) => {
-  if (size === "sm") return "my-8";
-  if (size === "md") return "mb-16";
-  else return "mb-16";
-};
+
