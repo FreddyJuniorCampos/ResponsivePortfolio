@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Presentation from "../components/Presentation";
 import About from "../components/About";
 import Credentials from "../components/Credentials";
+import Contact from "../components/Contact"
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Presentation />
       <About />
       <Credentials />
+      <Contact />
     </>
   );
 };
