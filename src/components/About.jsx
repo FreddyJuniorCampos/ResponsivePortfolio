@@ -1,4 +1,6 @@
 import React from "react";
+import H3 from "@material-tailwind/react/Heading3";
+import P from "@material-tailwind/react/Paragraph";
 
 import Avatar from "../assets/static/avatar1.png";
 import useQuery from "../hooks/useQuery";
@@ -8,34 +10,36 @@ const About = () => {
 
   return (
     <>
-      <div
-        className="flex justify-center py-16"
-        style={{ background: "linear-gradient( #D8D8D8, #3F3F3F)" }}
-      >
+      <div className="flex justify-center py-16">
         <div
           className="flex flex-col"
           style={size === "sm" || size === "md" ? {} : { width: "80%" }}
         >
-          <h1 id="about-me" className="text-3xl text-white mx-4 mb-8">
+          <H3 id="about-me" color="white" className="mx-4 mb-8">
             About Me
-          </h1>
+          </H3>
           <div className={aboutMeContainer(size)}>
             <div
-              className="mx-4 text-justify"
-              style={{ width: "-webkit-fill-available" }}
+              className="mx-4"
+              style={{
+                width: "-webkit-fill-available",
+                background: "#D8FF91",
+                padding: "20px",
+                borderRadius: "5px"
+              }}
             >
-              <p className="text-white">
+              <P style={{ fontWeight: "500", textAlign: "justify" }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Debitis, voluptas in pariatur, eligendi voluptates distinctio
                 est a corrupti dolorum neque temporibus nihil libero tenetur
                 rerum quisquam commodi nobis deserunt sapiente!.
-              </p>{" "}
-              <p className="text-white">
+              </P>
+              <P style={{ fontWeight: "500", textAlign: "justify" }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Debitis, voluptas in pariatur, eligendi voluptates distinctio
                 est a corrupti dolorum neque temporibus nihil libero tenetur
                 rerum quisquam commodi nobis deserunt sapiente!.
-              </p>
+              </P>
             </div>
             <div
               className="flex justify-center"

@@ -10,7 +10,6 @@ const Contact = () => {
     <>
       <div
         className="flex justify-center py-16 m-0"
-        style={{ background: "linear-gradient(#D8D8D8, #3F3F3F)" }}
       >
         <div
           className="flex flex-col items-center"
