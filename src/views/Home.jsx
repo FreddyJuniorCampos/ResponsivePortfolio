@@ -5,12 +5,14 @@ import About from "../components/About";
 import Credentials from "../components/Credentials";
 import Contact from "../components/Contact";
 
-import backImage from "../assets/static/backImage.png";
+import useQuery from "../hooks/useQuery";
 
 const Home = () => {
-  var prevScrollpos = window.pageYOffset;
+  const size = useQuery();
+
+  let prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("navPrincipal").style.top = "0";
     } else {
@@ -18,6 +20,7 @@ const Home = () => {
     }
     prevScrollpos = currentScrollPos;
   };
+
   return (
     <>
       <div
@@ -26,14 +29,15 @@ const Home = () => {
           width: "100%",
           position: "fixed",
           zIndex: "999",
+          transition: "all 0.5s ease-out",
         }}
       >
         <Header />
       </div>
+
       <div
         style={{
-          paddingTop: "100px",
-          background: `url(${backImage})`,
+          background: "rgba(0,0,0,0.95)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

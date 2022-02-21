@@ -6,6 +6,7 @@ import H3 from "@material-tailwind/react/Heading3";
 import P from "@material-tailwind/react/Paragraph";
 
 import Avatar from "../assets/static/avatar1.png";
+import backImage from "../assets/static/backImage.png";
 import useQuery from "../hooks/useQuery";
 
 const Presentation = () => {
@@ -13,13 +14,21 @@ const Presentation = () => {
 
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div
+        className={size === "sm" || size === "md" ? "flex flex-col pt-10" : "flex flex-col h-screen"}
+        style={{
+          background: `url(${backImage})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <div className={responsiveContainer(size)}>
           <img
             className={size === "sm" ? "mt-8" : ""}
             src={Avatar}
             alt="Avatar"
-            width={size === "sm" ? "250px" : "350px"}
+            width={size === "sm" || size === "md" ? "250px" : "350px"}
           />
           <div className="my-4 mx-5">
             <div className="my-4">
@@ -46,10 +55,16 @@ const Presentation = () => {
         </div>
         <div className="flex justify-center pb-4 mb-8">
           <motion.div
+            initial={{ y: -10 }}
             animate={{ y: 10 }}
-            transition={{ repeat: Infinity, duration: 1 }}
+            transition={{
+              repeat: Infinity,
+              duration: 0.5,
+              ease: "easeIn",
+              repeatType: "reverse",
+            }}
           >
-            <a href="#about-me">
+            <a href="#about-me" transition="all 0.2s ease">
               <FontAwesomeIcon icon={faAngleDown} size="3x" color="#D8FF91" />
             </a>
           </motion.div>

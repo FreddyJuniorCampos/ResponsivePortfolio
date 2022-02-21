@@ -1,7 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 
 const useQuery = () => {
-  const sm = useMediaQuery({ query: "(max-width: 640px)" });
+  const sm = useMediaQuery({ query: "(max-width: 375px)" });
   const md = useMediaQuery({ query: "(max-width: 768px)" });
   const lg = useMediaQuery({ query: "(max-width: 1024px)" });
   const xl = useMediaQuery({ query: "(max-width: 1280px)" });

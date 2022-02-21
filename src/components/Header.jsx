@@ -18,12 +18,16 @@ const Header = () => {
     <>
       <div
         className="flex flex-wrap items-center justify-between py-2.5 px-3 false undefined"
-        style={{ backgroundColor: "rgb(46 45 45)" }}
+        style={{ backgroundColor: "rgba(0,0,0, 0.8)" }}
       >
         <NavbarContainer>
           <NavbarWrapper>
             <motion.div whileHover={{ scale: 1.05 }}>
-              <img src={logo} alt="logo" style={{ width: "40px", cursor: "pointer" }} />
+              <img
+                src={logo}
+                alt="logo"
+                style={{ width: "40px", cursor: "pointer" }}
+              />
             </motion.div>
             <NavbarToggler
               color="white"
