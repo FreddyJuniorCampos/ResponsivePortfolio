@@ -5,7 +5,6 @@ const useQuery = () => {
   const md = useMediaQuery({ query: "(max-width: 768px)" });
   const lg = useMediaQuery({ query: "(max-width: 1024px)" });
   const xl = useMediaQuery({ query: "(max-width: 1280px)" });
-  const xxl = useMediaQuery({ query: "(min-width: 1281px)" });
 
   let size = "";
 

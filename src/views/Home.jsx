@@ -4,6 +4,7 @@ import Presentation from "../components/Presentation";
 import About from "../components/About";
 import Credentials from "../components/Credentials";
 import Contact from "../components/Contact";
+import Banner from "../components/Banner";
 
 import useQuery from "../hooks/useQuery";
 
@@ -45,6 +46,7 @@ const Home = () => {
       >
         <Presentation />
         <About />
+        <Banner />
         <Credentials />
         <Contact />
       </div>
