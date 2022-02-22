@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import CredentialCard from "./CredentialCard";
-import Avatar from "../assets/static/avatar1.png";
 import useQuery from "../hooks/useQuery";
+import { certificactions } from "../documents/certifications";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,9 +17,6 @@ import { Pagination, Navigation } from "swiper";
 import "swiper/css";
 
 const Carousel = () => {
-  const lorem =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi impedit molestias nisi aperiam suscipit ex veritatis saepe minus recusandae culpa doloribus quo vitae aut ducimus ea, ipsam officiis laudantium porro.";
-
   const size = useQuery();
 
   return (
@@ -37,34 +34,17 @@ const Carousel = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <CredentialCard
-            credentialImg={Avatar}
-            credentialText={lorem}
-            credentialTitle="Credential 1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CredentialCard
-            credentialImg={Avatar}
-            credentialText={lorem}
-            credentialTitle="Credential 1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CredentialCard
-            credentialImg={Avatar}
-            credentialText={lorem}
-            credentialTitle="Credential 1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CredentialCard
-            credentialImg={Avatar}
-            credentialText={lorem}
-            credentialTitle="Credential 1"
-          />
-        </SwiperSlide>
+        {certificactions.map((item) => (
+          <SwiperSlide>
+            <a href={item.ref} target="_blank">
+              <CredentialCard
+                credentialImg={item.image}
+                credentialText={item.description}
+                credentialTitle={item.name}
+              />
+            </a>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

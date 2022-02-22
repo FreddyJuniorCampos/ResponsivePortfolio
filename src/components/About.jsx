@@ -10,13 +10,13 @@ const About = () => {
 
   return (
     <>
-      <div className="flex justify-center py-16">
+      <div className="flex justify-center py-16" id="about-me">
 
         <div
           className="flex flex-col justify-center"
-          style={size === "sm" || size === "md" ? { padding: "20px"} : { width: "80%" }}
+          style={size === "sm" || size === "md" ? { padding: "20px" } : { width: "80%" }}
         >
-          <H3 id="about-me" color="white" className="mx-4 mb-8">
+          <H3 color="white" className="mx-4 mb-8">
             About Me
           </H3>
           <div className={aboutMeContainer(size)}>

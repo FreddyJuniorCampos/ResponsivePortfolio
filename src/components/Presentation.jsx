@@ -4,6 +4,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import H3 from "@material-tailwind/react/Heading3";
 import P from "@material-tailwind/react/Paragraph";
+import { Link } from "react-scroll";
 
 import Avatar from "../assets/static/avatar1.png";
 import backImage from "../assets/static/backImage.png";
@@ -15,7 +16,12 @@ const Presentation = () => {
   return (
     <>
       <div
-        className={size === "sm" || size === "md" ? "flex flex-col pt-10" : "flex flex-col h-screen"}
+        id="presentation"
+        className={
+          size === "sm" || size === "md"
+            ? "flex flex-col pt-10"
+            : "flex flex-col h-screen"
+        }
         style={{
           background: `url(${backImage})`,
           backgroundRepeat: "no-repeat",
@@ -64,9 +70,14 @@ const Presentation = () => {
               repeatType: "reverse",
             }}
           >
-            <a href="#about-me" transition="all 0.2s ease">
-              <FontAwesomeIcon icon={faAngleDown} size="3x" color="#D8FF91" />
-            </a>
+            <Link to="about-me" smooth={true} duration={700} isDynamic={true}>
+              <FontAwesomeIcon
+                style={{ cursor: "pointer" }}
+                icon={faAngleDown}
+                size="3x"
+                color="#D8FF91"
+              />
+            </Link>
           </motion.div>
         </div>
       </div>

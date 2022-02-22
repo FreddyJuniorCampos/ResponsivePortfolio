@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 
 import logo from "../assets/static/logo.png";
 
+import { Link } from "react-scroll";
+
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
 
@@ -23,11 +25,18 @@ const Header = () => {
         <NavbarContainer>
           <NavbarWrapper>
             <motion.div whileHover={{ scale: 1.05 }}>
-              <img
-                src={logo}
-                alt="logo"
-                style={{ width: "40px", cursor: "pointer" }}
-              />
+              <Link
+                to="presentation"
+                smooth={true}
+                duration={700}
+                isDynamic={true}
+              >
+                <img
+                  src={logo}
+                  alt="logo"
+                  style={{ width: "40px", cursor: "pointer" }}
+                />
+              </Link>
             </motion.div>
             <NavbarToggler
               color="white"
@@ -41,23 +50,44 @@ const Header = () => {
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#about-me" style={{ color: "#F7F7F7" }}>
-                  Sobre mí
-                </NavLink>
+                <Link
+                  to="about-me"
+                  smooth={true}
+                  duration={700}
+                  isDynamic={true}
+                >
+                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                    Sobre mí
+                  </NavLink>
+                </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#credentials" style={{ color: "#F7F7F7" }}>
-                  Credenciales
-                </NavLink>
+                <Link
+                  to="credentials"
+                  smooth={true}
+                  duration={700}
+                  isDynamic={true}
+                >
+                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                    Credenciales
+                  </NavLink>
+                </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink href="#contact" style={{ color: "#F7F7F7" }}>
-                  Contáctame
-                </NavLink>
+                <Link
+                  to="contact"
+                  smooth={true}
+                  duration={700}
+                  isDynamic={true}
+                >
+                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                    Contáctame
+                  </NavLink>
+                </Link>
               </motion.div>
             </Nav>
           </NavbarCollapse>

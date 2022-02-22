@@ -6,11 +6,7 @@ import Credentials from "../components/Credentials";
 import Contact from "../components/Contact";
 import Banner from "../components/Banner";
 
-import useQuery from "../hooks/useQuery";
-
 const Home = () => {
-  const size = useQuery();
-
   let prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;

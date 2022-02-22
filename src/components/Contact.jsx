@@ -11,6 +11,7 @@ const Contact = () => {
   return (
     <>
       <div
+        id="contact"
         className={
           size === "sm" || size === "md" || size === "lg"
             ? "flex justify-center py-16 m-0"
@@ -28,9 +29,7 @@ const Contact = () => {
           style={size === "sm" ? {} : { width: "80%" }}
         >
           <div style={{ width: "100%" }}>
-            <H3 id="contact" color="white">
-              Contáctame
-            </H3>
+            <H3 color="white">Contáctame</H3>
           </div>
           <div
             className="flex justify-center"
