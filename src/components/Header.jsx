@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 
 import NavbarContainer from "@material-tailwind/react/NavbarContainer";
 import NavbarWrapper from "@material-tailwind/react/NavbarWrapper";
@@ -11,11 +12,12 @@ import { motion } from "framer-motion";
 
 import logo from "../assets/static/logo.png";
 import { CVE, CVS } from "../documents/certifications";
-
-import { Link } from "react-scroll";
+import Language from "./Language/Language";
+import useQuery from "../hooks/useQuery";
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
+  const size = useQuery();
 
   return (
     <>
@@ -39,6 +41,9 @@ const Header = () => {
                 />
               </Link>
             </motion.div>
+
+            {size === "sm" || size === "md" ? <Language /> : null}
+
             <NavbarToggler
               color="white"
               onClick={() => setOpenNavbar(!openNavbar)}
@@ -47,6 +52,12 @@ const Header = () => {
           </NavbarWrapper>
 
           <NavbarCollapse open={openNavbar}>
+            {size !== "sm" || size !== "md" ? (
+              <div style={{ marginLeft: "200px"}}>
+                <Language />
+              </div>
+            ) : null}
+
             <Nav>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
