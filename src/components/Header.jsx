@@ -10,6 +10,7 @@ import NavLink from "@material-tailwind/react/NavLink";
 import { motion } from "framer-motion";
 
 import logo from "../assets/static/logo.png";
+import { CVE, CVS } from "../documents/certifications";
 
 import { Link } from "react-scroll";
 
@@ -88,6 +89,16 @@ const Header = () => {
                     Contáctame
                   </NavLink>
                 </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
+              >
+                <NavLink
+                  href={CVS}
+                  style={{ color: "#F7F7F7", cursor: "pointer" }}
+                >
+                  Mi CV
+                </NavLink>
               </motion.div>
             </Nav>
           </NavbarCollapse>

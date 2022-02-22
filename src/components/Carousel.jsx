@@ -34,8 +34,8 @@ const Carousel = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        {certificactions.map((item) => (
-          <SwiperSlide>
+        {certificactions.map((item, index) => (
+          <SwiperSlide key={index}>
             <a href={item.ref} target="_blank">
               <CredentialCard
                 credentialImg={item.image}

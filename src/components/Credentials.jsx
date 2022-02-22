@@ -9,7 +9,7 @@ const Credentials = () => {
 
   return (
     <>
-      <div className="flex justify-center py-16 m-0"  id="credentials">
+      <div className="flex justify-center py-16 m-0" id="credentials">
         <div
           className="flex flex-col"
           style={size === "sm" || size === "md" ? {} : { width: "80%" }}
@@ -17,7 +17,7 @@ const Credentials = () => {
           <H3 color="white" className="mx-4 mb-8">
             Credenciales
           </H3>
-          <div className="">
+          <div>
             <Carousel />
           </div>
         </div>

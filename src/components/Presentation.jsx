@@ -56,6 +56,44 @@ const Presentation = () => {
                 para aprender nuevas tecnologías. Soy un apasionado por la
                 programación y me encanta la libreria React.
               </P>
+              <div className="flex justify-between" style={{ width: "300px"}}>
+        <div>
+          <a
+            href="https://www.linkedin.com/in/freddy-campos-778142143/"
+            target={"_blank"}
+          >
+            <img
+              src="https://img.icons8.com/color/48/000000/linkedin.png"
+              alt="linkedin"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://github.com/FreddyJuniorCampos/" target={"_blank"}>
+            <img
+              src="https://img.icons8.com/color/48/000000/github.png"
+              alt="github"
+            />
+          </a>
+        </div>
+
+        <div>
+          <a href="https://t.me/freddyjunior1" target={"_blank"}>
+            <img
+              src="https://img.icons8.com/fluency/48/000000/telegram-app.png"
+              alt="telegram"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="mailto:freddycampos1994@gmail.com" target={"_blank"}>
+            <img
+              src="https://img.icons8.com/color/48/000000/gmail.png"
+              alt="email"
+            />
+          </a>
+        </div>
+      </div>
             </div>
           </div>
         </div>

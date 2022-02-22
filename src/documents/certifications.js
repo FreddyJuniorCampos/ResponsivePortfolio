@@ -18,6 +18,9 @@ import gitGithub from "../assets/certificates/git-github.jpg";
 import backendDjango from "../assets/certificates/backend-python.jpg";
 import bd from "../assets/certificates/bd.jpg";
 
+export const CVS = "https://drive.google.com/uc?id=1Vkv6uPfltmcqj7K9Y3b7h8HYFtW0aKQ9&export=download&authuser=0"
+export const CVE = "https://drive.google.com/uc?id=1Gh501AMqZpzmTmSHFvjao-JMqO7d86a1&export=download&authuser=0"
+
 export const certificactions = [
   {
     name: "Node JS",
