@@ -14,19 +14,32 @@ import Button from "@material-tailwind/react/Button";
 import { init, send } from "@emailjs/browser";
 init("user_PM8RAIlNHzqhd39ZHm7mm");
 
-const Schema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, "Muy corto su nombre")
-    .max(50, "Muy largo su nombre")
-    .required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  about: Yup.string()
-    .min(4, "Por favor, explique mas su razón de contacto")
-    .max(1500, "Muy largo su mensaje")
-    .required("Required"),
-});
+const CardContact = ({ language }) => {
+  const Schema =
+    language === "EN"
+      ? Yup.object().shape({
+          name: Yup.string()
+            .min(2, "Name too short")
+            .max(50, "Name too long")
+            .required("Required"),
+          email: Yup.string().email("Invalid email").required("Required"),
+          about: Yup.string()
+            .min(4, "Please explain further your reason for contact.")
+            .max(1500, "Messagge to long")
+            .required("Required"),
+        })
+      : Yup.object().shape({
+          name: Yup.string()
+            .min(2, "Muy corto su nombre")
+            .max(50, "Muy largo su nombre")
+            .required("Requerido"),
+          email: Yup.string().email("Correo invalido").required("Requerido"),
+          about: Yup.string()
+            .min(4, "Por favor, explique mas su razón de contacto")
+            .max(1500, "Muy largo su mensaje")
+            .required("Requerido"),
+        });
 
-const CardContact = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -49,24 +62,39 @@ const CardContact = () => {
       };
 
       formik.handleReset();
-      
+
       send("service_5rt2fdo", "template_8cdiv1h", templateParams).then(
         function (response) {
-          Swal.fire({
-            icon: 'success',
-            title: "Exito!",
-            text: 'Tu correo ha sido enviado',
-            showConfirmButton: false,
-            timer: 2000
-          })
+          language === "EN"
+            ? Swal.fire({
+                icon: "success",
+                title: "Success!",
+                text: "Email has been sent successfully",
+                showConfirmButton: false,
+                timer: 2000,
+              })
+            : Swal.fire({
+                icon: "success",
+                title: "Exito!",
+                text: "Tu correo ha sido enviado",
+                showConfirmButton: false,
+                timer: 2000,
+              });
         },
         function (error) {
-          Swal.fire({
-            icon: 'error',
-            title: "Error!",
-            text: 'Ha ocurrido un error',
-            showConfirmButton: true,
-          })
+          language === "EN"
+            ? Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Unexpected error",
+                showConfirmButton: true,
+              })
+            : Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Ha ocurrido un error",
+                showConfirmButton: true,
+              });
         }
       );
     },
@@ -82,7 +110,7 @@ const CardContact = () => {
               name="name"
               type="text"
               color="lightBlue"
-              placeholder="Name"
+              placeholder={language === "EN" ? "Full Name" : "Nombre Completo"}
               iconName="account_circle"
               onChange={formik.handleChange}
               value={formik.values.name}
@@ -98,7 +126,9 @@ const CardContact = () => {
               name="email"
               type="email"
               color="lightBlue"
-              placeholder="Email Address"
+              placeholder={
+                language === "EN" ? "Email Address" : "Correo Electrónico"
+              }
               iconName="email"
               onChange={formik.handleChange}
               value={formik.values.email}
@@ -115,7 +145,7 @@ const CardContact = () => {
               color="lightBlue"
               size="regular"
               outline={true}
-              placeholder="Acerca de"
+              placeholder={language === "EN" ? "About" : "Acerca de"}
               onChange={formik.handleChange}
               value={formik.values.about}
               error={
@@ -128,18 +158,33 @@ const CardContact = () => {
         </CardBody>
         <CardFooter>
           <div className="flex justify-center">
-            <Button
-              color="green"
-              buttonType="filled"
-              size="lg"
-              rounded={false}
-              block={false}
-              iconOnly={false}
-              ripple="light"
-              type="submit"
-            >
-              Enviar
-            </Button>
+            {language === "EN" ? (
+              <Button
+                color="green"
+                buttonType="filled"
+                size="lg"
+                rounded={false}
+                block={false}
+                iconOnly={false}
+                ripple="light"
+                type="submit"
+              >
+                Submit
+              </Button>
+            ) : (
+              <Button
+                color="green"
+                buttonType="filled"
+                size="lg"
+                rounded={false}
+                block={false}
+                iconOnly={false}
+                ripple="light"
+                type="submit"
+              >
+                Enviar
+              </Button>
+            )}
           </div>
         </CardFooter>
       </form>

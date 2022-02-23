@@ -4,7 +4,7 @@ import H3 from "@material-tailwind/react/Heading3";
 import useQuery from "../hooks/useQuery";
 import Carousel from "./Carousel";
 
-const Credentials = () => {
+const Credentials = ({ language }) => {
   const size = useQuery();
 
   return (
@@ -14,11 +14,18 @@ const Credentials = () => {
           className="flex flex-col"
           style={size === "sm" || size === "md" ? {} : { width: "80%" }}
         >
-          <H3 color="white" className="mx-4 mb-8">
-            Credenciales
-          </H3>
+          {language === "EN" ? (
+            <H3 color="white" className="mx-4 mb-8">
+              Credentials
+            </H3>
+          ) : (
+            <H3 color="white" className="mx-4 mb-8">
+              Credenciales
+            </H3>
+          )}
+
           <div>
-            <Carousel />
+            <Carousel language={language} />
           </div>
         </div>
       </div>

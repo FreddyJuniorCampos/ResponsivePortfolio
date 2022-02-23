@@ -16,7 +16,7 @@ import { Pagination, Navigation } from "swiper";
 
 import "swiper/css";
 
-const Carousel = () => {
+const Carousel = ({ language }) => {
   const size = useQuery();
 
   return (
@@ -39,8 +39,10 @@ const Carousel = () => {
             <a href={item.ref} target="_blank">
               <CredentialCard
                 credentialImg={item.image}
-                credentialText={item.description}
-                credentialTitle={item.name}
+                credentialText={
+                  language === "EN" ? item.description : item.descriptionS
+                }
+                credentialTitle={language === "EN" ? item.name : item.nameS}
               />
             </a>
           </SwiperSlide>

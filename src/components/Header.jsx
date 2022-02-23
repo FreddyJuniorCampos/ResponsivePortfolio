@@ -15,7 +15,7 @@ import { CVE, CVS } from "../documents/certifications";
 import Language from "./Language/Language";
 import useQuery from "../hooks/useQuery";
 
-const Header = () => {
+const Header = ({ handleLanguage, language }) => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const size = useQuery();
 
@@ -42,7 +42,9 @@ const Header = () => {
               </Link>
             </motion.div>
 
-            {size === "sm" || size === "md" ? <Language /> : null}
+            {size === "sm" || size === "md" ? (
+              <Language handleLanguage={handleLanguage} />
+            ) : null}
 
             <NavbarToggler
               color="white"
@@ -53,8 +55,8 @@ const Header = () => {
 
           <NavbarCollapse open={openNavbar}>
             {size !== "sm" || size !== "md" ? (
-              <div style={{ marginLeft: "200px"}}>
-                <Language />
+              <div style={{ marginLeft: "200px" }}>
+                <Language handleLanguage={handleLanguage} />
               </div>
             ) : null}
 
@@ -68,9 +70,15 @@ const Header = () => {
                   duration={700}
                   isDynamic={true}
                 >
-                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
-                    Sobre mí
-                  </NavLink>
+                  {language === "EN" ? (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      About me
+                    </NavLink>
+                  ) : (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      Sobre mí
+                    </NavLink>
+                  )}
                 </Link>
               </motion.div>
               <motion.div
@@ -82,9 +90,15 @@ const Header = () => {
                   duration={700}
                   isDynamic={true}
                 >
-                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
-                    Credenciales
-                  </NavLink>
+                  {language === "EN" ? (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      Credentials
+                    </NavLink>
+                  ) : (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      Credenciales
+                    </NavLink>
+                  )}
                 </Link>
               </motion.div>
               <motion.div
@@ -96,20 +110,35 @@ const Header = () => {
                   duration={700}
                   isDynamic={true}
                 >
-                  <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
-                    Contáctame
-                  </NavLink>
+                  {language === "EN" ? (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      Contact me
+                    </NavLink>
+                  ) : (
+                    <NavLink style={{ color: "#F7F7F7", cursor: "pointer" }}>
+                      Contáctame
+                    </NavLink>
+                  )}
                 </Link>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(0,0,0,0.2)" }}
               >
-                <NavLink
-                  href={CVS}
-                  style={{ color: "#F7F7F7", cursor: "pointer" }}
-                >
-                  Mi CV
-                </NavLink>
+                {language === "EN" ? (
+                  <NavLink
+                    href={language === "ES" ? CVS : CVE}
+                    style={{ color: "#F7F7F7", cursor: "pointer" }}
+                  >
+                    My CV
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    href={language === "ES" ? CVS : CVE}
+                    style={{ color: "#F7F7F7", cursor: "pointer" }}
+                  >
+                    Mi CV
+                  </NavLink>
+                )}
               </motion.div>
             </Nav>
           </NavbarCollapse>

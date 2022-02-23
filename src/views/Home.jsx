@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Presentation from "../components/Presentation";
 import About from "../components/About";
@@ -7,6 +7,8 @@ import Contact from "../components/Contact";
 import Banner from "../components/Banner";
 
 const Home = () => {
+  const [language, setLanguage] = useState("ES");
+
   let prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
@@ -16,6 +18,10 @@ const Home = () => {
       document.getElementById("navPrincipal").style.top = "-100px";
     }
     prevScrollpos = currentScrollPos;
+  };
+
+  const handleLanguage = (lang) => {
+    lang ? setLanguage("EN") : setLanguage("ES");
   };
 
   return (
@@ -29,7 +35,7 @@ const Home = () => {
           transition: "all 0.5s ease-out",
         }}
       >
-        <Header />
+        <Header handleLanguage={handleLanguage} language={language} />
       </div>
 
       <div
@@ -40,11 +46,11 @@ const Home = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <Presentation />
-        <About />
-        <Banner />
-        <Credentials />
-        <Contact />
+        <Presentation language={language} />
+        <About language={language} />
+        <Banner language={language} />
+        <Credentials language={language} />
+        <Contact language={language} />
       </div>
     </>
   );

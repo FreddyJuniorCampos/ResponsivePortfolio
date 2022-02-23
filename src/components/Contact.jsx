@@ -5,7 +5,7 @@ import useQuery from "../hooks/useQuery";
 
 import backImage from "../assets/static/backImage.png";
 
-const Contact = () => {
+const Contact = ({ language }) => {
   const size = useQuery();
 
   return (
@@ -29,13 +29,17 @@ const Contact = () => {
           style={size === "sm" ? {} : { width: "80%" }}
         >
           <div style={{ width: "100%" }}>
-            <H3 color="white">Contáctame</H3>
+            {language === "EN" ? (
+              <H3 color="white">Contact me</H3>
+            ) : (
+              <H3 color="white">Contáctame</H3>
+            )}
           </div>
           <div
             className="flex justify-center"
             style={size === "sm" ? {} : { width: "650px" }}
           >
-            <CardContact />
+            <CardContact language={language} />
           </div>
         </div>
       </div>

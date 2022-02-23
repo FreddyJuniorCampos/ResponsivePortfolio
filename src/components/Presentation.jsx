@@ -9,8 +9,9 @@ import { Link } from "react-scroll";
 import Avatar from "../assets/static/avatar1.png";
 import backImage from "../assets/static/backImage.png";
 import useQuery from "../hooks/useQuery";
+import { CVE, CVS } from "../documents/certifications";
 
-const Presentation = () => {
+const Presentation = ({ language }) => {
   const size = useQuery();
 
   return (
@@ -38,9 +39,17 @@ const Presentation = () => {
           />
           <div className="my-4 mx-5">
             <div className="my-4">
-              <P color="white" style={{ fontWeight: "500" }}>
-                Hola, Mi nombre es
-              </P>
+              {/* {language === "EN" ? () : ()} */}
+              {language === "EN" ? (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  Hi, My name is
+                </P>
+              ) : (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  Hola, Mi nombre es
+                </P>
+              )}
+
               <H3 color="white">Freddy Junior Campos</H3>
             </div>
             <div
@@ -51,49 +60,77 @@ const Presentation = () => {
                   : { maxWidth: "550px" }
               }
             >
-              <P color="white" style={{ fontWeight: "500" }}>
-                Soy desarrollador web e ingeniero electrónico, siempre motivado
-                para aprender nuevas tecnologías. Soy un apasionado por la
-                programación y me encanta la libreria React.
-              </P>
-              <div className="flex justify-between" style={{ width: "300px"}}>
-        <div>
-          <a
-            href="https://www.linkedin.com/in/freddy-campos-778142143/"
-            target={"_blank"}
-          >
-            <img
-              src="https://img.icons8.com/color/48/000000/linkedin.png"
-              alt="linkedin"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="https://github.com/FreddyJuniorCampos/" target={"_blank"}>
-            <img
-              src="https://img.icons8.com/color/48/000000/github.png"
-              alt="github"
-            />
-          </a>
-        </div>
+              {language === "EN" ? (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  I am web developer and electronic engineer, always motivated
+                  to learn new technologies. I am passionated about programming,
+                  especially Mongo, Node, Express y React.
+                </P>
+              ) : (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  Soy desarrollador web e ingeniero electrónico, siempre
+                  motivado para aprender nuevas tecnologías. Soy un apasionado
+                  por la programación, especialmente en Mongo, Node, Express y
+                  React.
+                </P>
+              )}
+              {language === "EN" ? (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  Can download my CV in the language of the site.
+                  <a className="ml-2" href={CVS} style={{ cursor: "pointer" }}>
+                    Here 🧐
+                  </a>
+                </P>
+              ) : (
+                <P color="white" style={{ fontWeight: "500" }}>
+                  Puedes descargar mi CV en el idioma de la pagina web.
+                  <a className="ml-2" href={CVS} style={{ cursor: "pointer" }}>
+                    Aquí 🧐
+                  </a>
+                </P>
+              )}
 
-        <div>
-          <a href="https://t.me/freddyjunior1" target={"_blank"}>
-            <img
-              src="https://img.icons8.com/fluency/48/000000/telegram-app.png"
-              alt="telegram"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="mailto:freddycampos1994@gmail.com" target={"_blank"}>
-            <img
-              src="https://img.icons8.com/color/48/000000/gmail.png"
-              alt="email"
-            />
-          </a>
-        </div>
-      </div>
+              <div className="flex justify-between" style={{ width: "300px" }}>
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <a
+                    href="https://www.linkedin.com/in/freddy-campos-778142143/"
+                    target={"_blank"}
+                  >
+                    <img
+                      src="https://img.icons8.com/color/48/000000/linkedin.png"
+                      alt="linkedin"
+                    />
+                  </a>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <a
+                    href="https://github.com/FreddyJuniorCampos/"
+                    target={"_blank"}
+                  >
+                    <img
+                      src="https://img.icons8.com/color/48/000000/github.png"
+                      alt="github"
+                    />
+                  </a>
+                </motion.div>
+
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <a href="https://t.me/freddyjunior1" target={"_blank"}>
+                    <img
+                      src="https://img.icons8.com/fluency/48/000000/telegram-app.png"
+                      alt="telegram"
+                    />
+                  </a>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  <a href="mailto:freddycampos1994@gmail.com" target={"_blank"}>
+                    <img
+                      src="https://img.icons8.com/color/48/000000/gmail.png"
+                      alt="email"
+                    />
+                  </a>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

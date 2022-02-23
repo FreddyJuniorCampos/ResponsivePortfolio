@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import "./styles.css";
 import H5 from "@material-tailwind/react/Heading5";
 
-const Language = () => {
+const Language = ({ handleLanguage }) => {
   const [isOn, setIsOn] = useState(false);
 
-  const toggleSwitch = () => setIsOn(!isOn);
+  const toggleSwitch = () => {
+    handleLanguage(!isOn)
+    setIsOn(!isOn);
+  };
 
   return (
     <div className="flex justify-between" style={{ width: "120px" }}>
