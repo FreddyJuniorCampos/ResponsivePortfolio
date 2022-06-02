@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import H3 from "@material-tailwind/react/Heading3";
 import P from "@material-tailwind/react/Paragraph";
@@ -39,7 +39,6 @@ const Presentation = ({ language }) => {
           />
           <div className="my-4 mx-5">
             <div className="my-4">
-              {/* {language === "EN" ? () : ()} */}
               {language === "EN" ? (
                 <P color="white" style={{ fontWeight: "500" }}>
                   Hi, My name is
@@ -61,13 +60,13 @@ const Presentation = ({ language }) => {
               }
             >
               {language === "EN" ? (
-                <P color="white" style={{ fontWeight: "500" }}>
+                <P color="white" style={{ fontWeight: "500", fontSize: "1.2rem" }}>
                   I am web developer and electronic engineer, always motivated
                   to learn new technologies. I am passionated about programming,
                   especially Mongo, Node, Express y React.
                 </P>
               ) : (
-                <P color="white" style={{ fontWeight: "500" }}>
+                <P color="white" style={{ fontWeight: "500", fontSize: "1.2rem" }}>
                   Soy desarrollador web e ingeniero electrónico, siempre
                   motivado para aprender nuevas tecnologías. Soy un apasionado
                   por la programación, especialmente en Mongo, Node, Express y
@@ -75,14 +74,14 @@ const Presentation = ({ language }) => {
                 </P>
               )}
               {language === "EN" ? (
-                <P color="white" style={{ fontWeight: "500" }}>
+                <P color="white" style={{ fontWeight: "500", fontSize: "1.2rem" }}>
                   Can download my CV in the language of the site.
                   <a className="ml-2" href={CVS} style={{ cursor: "pointer" }}>
                     Here 🧐
                   </a>
                 </P>
               ) : (
-                <P color="white" style={{ fontWeight: "500" }}>
+                <P color="white" style={{ fontWeight: "500", fontSize: "1.2rem" }}>
                   Puedes descargar mi CV en el idioma de la pagina web.
                   <a className="ml-2" href={CVS} style={{ cursor: "pointer" }}>
                     Aquí 🧐
@@ -146,12 +145,12 @@ const Presentation = ({ language }) => {
             }}
           >
             <Link to="about-me" smooth={true} duration={700} isDynamic={true}>
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 style={{ cursor: "pointer" }}
                 icon={faAngleDown}
                 size="3x"
                 color="#D8FF91"
-              />
+              /> */}
             </Link>
           </motion.div>
         </div>

@@ -19,6 +19,8 @@ const Header = ({ handleLanguage, language }) => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const size = useQuery();
 
+  console.log("Size", size);
+
   return (
     <>
       <div
@@ -54,7 +56,7 @@ const Header = ({ handleLanguage, language }) => {
           </NavbarWrapper>
 
           <NavbarCollapse open={openNavbar}>
-            {size !== "sm" || size !== "md" ? (
+            {size === "lg" || size === "xl" || size === "xxl" ? (
               <div style={{ marginLeft: "200px" }}>
                 <Language handleLanguage={handleLanguage} />
               </div>
