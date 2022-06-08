@@ -56,7 +56,7 @@ const Presentation = ({ language }) => {
               style={
                 size === "sm"
                   ? { maxWidth: "300px", textAlign: "justify" }
-                  : { maxWidth: "550px" }
+                  : { maxWidth: "560px" }
               }
             >
               {language === "EN" ? (
