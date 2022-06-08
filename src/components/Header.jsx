@@ -19,8 +19,6 @@ const Header = ({ handleLanguage, language }) => {
   const [openNavbar, setOpenNavbar] = useState(false);
   const size = useQuery();
 
-  console.log("Size", size);
-
   return (
     <>
       <div

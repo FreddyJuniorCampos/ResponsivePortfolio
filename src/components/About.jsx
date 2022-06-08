@@ -20,9 +20,15 @@ const About = ({ language }) => {
               : { width: "80%" }
           }
         >
-          <H3 color="white" className="mx-4 mb-8">
-            About Me
-          </H3>
+          {language === "EN" ? (
+            <H3 color="white" className="mx-4 mb-8">
+              About Me
+            </H3>
+          ) : (
+            <H3 color="white" className="mx-4 mb-8">
+              Sobre mí
+            </H3>
+          )}
           <div className={aboutMeContainer(size)}>
             {language === "EN" ? (
               <div
@@ -138,7 +144,7 @@ const About = ({ language }) => {
                   filter: hover && "sepia(50%)",
                   height: size !== "sm" && "500px",
                 }}
-                width={size === "sm" ? "250px" : "350px"}
+                width={size === "sm" ? "250px" : "390px"}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
               />
