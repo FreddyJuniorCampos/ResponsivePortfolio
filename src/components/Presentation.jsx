@@ -76,7 +76,7 @@ const Presentation = ({ language }) => {
               {language === "EN" ? (
                 <P color="white" style={{ fontWeight: "500", fontSize: "1.2rem" }}>
                   Can download my CV in the language of the site.
-                  <a className="ml-2" href={CVS} style={{ cursor: "pointer" }}>
+                  <a className="ml-2" href={CVE} style={{ cursor: "pointer" }}>
                     Here 🧐
                   </a>
                 </P>
