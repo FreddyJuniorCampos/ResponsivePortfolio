@@ -55,7 +55,7 @@ const Presentation = ({ language }) => {
               className="mb-4"
               style={
                 size === "sm"
-                  ? { maxWidth: "300px", textAlign: "justify" }
+                  ? { maxWidth: "400px", textAlign: "justify" }
                   : { maxWidth: "560px" }
               }
             >
